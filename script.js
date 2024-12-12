@@ -1,10 +1,10 @@
 
-
+//Task 1 - Api interaction use GET requests
 document.getElementById('fetch').addEventListener('click', function () {
     fetch('https://jsonplaceholder.typicode.com/posts/1')
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Unkown error, try again later.');
             }
             return response.json();
         })
