@@ -56,3 +56,17 @@ document.getElementById('fetchxhr').addEventListener('click', function () {
 
     xhr.send();
 });
+
+//Task 3 - send data using POST
+document.getElementById('createPost').addEventListener('submit', function (event) {
+    const title = document.getElementById('postTitle').value;
+    const body = document.getElementById('postBody').value;
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: title,
+            body: body,
+        })
+    })
+})
