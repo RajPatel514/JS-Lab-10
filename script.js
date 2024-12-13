@@ -70,3 +70,5 @@ document.getElementById('createPost').addEventListener('submit', function (event
         })
     })
 })
+
+//Task 4 - update data using PUT
