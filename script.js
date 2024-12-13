@@ -61,13 +61,16 @@ document.getElementById('fetchxhr').addEventListener('click', function () {
 document.getElementById('createPost').addEventListener('submit', function (event) {
     const title = document.getElementById('postTitle').value;
     const body = document.getElementById('postBody').value;
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
+        headers: myHeaders,
         body: JSON.stringify({
             title: title,
             body: body,
-        })
+        }),
     })
 })
 
