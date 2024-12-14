@@ -59,6 +59,7 @@ document.getElementById('fetchxhr').addEventListener('click', function () {
 
 //Task 3 - send data using POST
 document.getElementById('createPost').addEventListener('submit', function (event) {
+    event.preventDefault();
     const title = document.getElementById('postTitle').value;
     const body = document.getElementById('postBody').value;
     const myHeaders = new Headers();
@@ -81,7 +82,7 @@ document.getElementById('createPost').addEventListener('submit', function (event
                 console.log(data);
                 displayData(data);
             })
-            .catch(error => console.error('Error fetching data:', error))
+            .catch(error => console.error('Error posting data:', error))
     });
 })
 
