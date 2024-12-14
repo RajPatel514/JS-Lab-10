@@ -18,10 +18,21 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
+  text-align: center;
 }
 form {
   margin-top: 30px;
   padding: 20px;
   background-color: #e4e4e4;
   border-radius: 15px;
+}
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #000000;
+  color: #ddd;
 }
