@@ -29,10 +29,14 @@ form {
 th,
 td {
   padding: 12px;
-  text-align: left;
+  text-align: center;
 }
 
 th {
   background-color: #000000;
   color: #ddd;
+}
+
+table {
+  text-align: center;
 }
