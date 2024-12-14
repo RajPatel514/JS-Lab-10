@@ -4,7 +4,7 @@ document.getElementById('fetch').addEventListener('click', function () {
     fetch('https://jsonplaceholder.typicode.com/posts/1')
         .then(response => {
             if (!response.ok) {
-                throw new Error('Unkown error, try again later.');
+                throw new Error('Unknown error, try again later.');
             }
             return response.json();
         })
@@ -12,7 +12,7 @@ document.getElementById('fetch').addEventListener('click', function () {
             console.log(data);
             displayData(data);
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => console.error('Error fetching data:', error))
 });
 
 function displayData(data) {
@@ -70,8 +70,19 @@ document.getElementById('createPost').addEventListener('submit', function (event
         body: JSON.stringify({
             title: title,
             body: body,
-        }),
-    })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error! Try again!');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                displayData(data);
+            })
+            .catch(error => console.error('Error fetching data:', error))
+    });
 })
 
 //Task 4 - update data using PUT
